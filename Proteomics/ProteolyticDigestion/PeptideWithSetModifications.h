@@ -48,6 +48,26 @@ namespace Proteomics
 {
     namespace ProteolyticDigestion
     {
+        
+        struct SerializedPeptide {
+
+            int GetOneBasedStartResidueInProtein;
+            int GetOneBasedEndResidueInProtein;
+            int GetMissedCleavages;
+            int NumFixedMods;
+
+            std::string GetPeptideDescription;
+            std::string GetCleavageSpecificityAsString;
+            std::string GetFullSequence;
+            std::string GetDigestionParamsString;
+            std::string GetProteinAccession;
+
+            MSGPACK_DEFINE(GetOneBasedStartResidueInProtein, GetOneBasedEndResidueInProtein, 
+                        GetMissedCleavages, NumFixedMods, GetPeptideDescription, 
+                        GetCleavageSpecificityAsString, GetFullSequence, GetDigestionParamsString,
+                        GetProteinAccession);
+        }
+        
         class PeptideWithSetModifications : public ProteolyticPeptide
         {
         private:
