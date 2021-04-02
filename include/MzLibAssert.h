@@ -84,6 +84,9 @@ public:
             std::cout << "  Assert.h: is FALSE but should be TRUE" << std::endl;
 //            std::abort();
         }
+        else {
+            std::cout << "  Success" << std::endl;
+        }
     }
     static void IsFalse ( bool a) {
         if ( a ) {
